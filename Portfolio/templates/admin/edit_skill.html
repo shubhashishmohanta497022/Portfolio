@@ -1,0 +1,26 @@
+{% extends "admin/layout.html" %}
+
+{% block admin_content %}
+<h1 class="text-3xl font-bold text-gray-800 mb-6">{{ title }}</h1>
+
+<div class="bg-white p-8 rounded-lg shadow-md max-w-2xl mx-auto">
+    <form method="POST">
+        <div class="mb-4">
+            <label for="name" class="block text-gray-700 font-medium mb-2">Skill Name</label>
+            <input type="text" id="name" name="name" value="{{ skill.name if skill else '' }}" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        </div>
+        <div class="mb-4">
+            <label for="category" class="block text-gray-700 font-medium mb-2">Category</label>
+            <input type="text" id="category" name="category" value="{{ skill.category if skill else '' }}" placeholder="e.g., Frontend, Backend, Database" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        </div>
+        <div class="mb-6">
+            <label for="level" class="block text-gray-700 font-medium mb-2">Proficiency Level (0-100)</label>
+            <input type="number" id="level" name="level" value="{{ skill.level if skill else '80' }}" min="0" max="100" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        </div>
+        <div class="flex items-center justify-end space-x-4">
+            <a href="{{ url_for('admin.list_skills') }}" class="text-gray-600 hover:underline">Cancel</a>
+            <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700">Save Skill</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

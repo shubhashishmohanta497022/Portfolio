@@ -1,0 +1,33 @@
+{% extends "admin/layout.html" %}
+
+{% block admin_content %}
+<h1 class="text-3xl font-bold text-gray-800 mb-6">Contact Messages</h1>
+
+<div class="bg-white p-6 rounded-lg shadow-md">
+    <div class="space-y-4">
+        {% for message in messages %}
+        <div class="border rounded-lg p-4 {% if not message.is_read %} border-indigo-500 bg-indigo-50 {% endif %}">
+            <div class="flex justify-between items-center">
+                <div>
+                    <p class="font-bold">{{ message.name }} <span class="font-normal text-gray-500">&lt;{{ message.email }}&gt;</span></p>
+                    <p class="text-sm text-gray-500">{{ message.timestamp.strftime('%Y-%m-%d %H:%M') }}</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                    {% if not message.is_read %}
+                    <form action="{{ url_for('admin.mark_message_read', id=message.id) }}" method="POST">
+                        <button type="submit" class="text-xs bg-green-200 text-green-800 px-2 py-1 rounded-full">Mark as Read</button>
+                    </form>
+                    {% endif %}
+                     <form action="{{ url_for('admin.delete_message', id=message.id) }}" method="POST" onsubmit="return confirm('Are you sure?');">
+                        <button type="submit" class="text-xs bg-red-200 text-red-800 px-2 py-1 rounded-full">Delete</button>
+                    </form>
+                </div>
+            </div>
+            <p class="mt-4 text-gray-700 whitespace-pre-wrap">{{ message.message }}</p>
+        </div>
+        {% else %}
+        <p class="text-center text-gray-500 py-4">No messages yet.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

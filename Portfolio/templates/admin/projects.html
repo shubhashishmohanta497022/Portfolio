@@ -1,0 +1,44 @@
+{% extends "admin/layout.html" %}
+
+{% block admin_content %}
+<div class="container mx-auto">
+    <div class="flex justify-between items-center mb-6">
+        <h1 class="text-3xl font-bold text-gray-800">Manage Projects</h1>
+        <!-- CORRECTED LINK BELOW -->
+        <a href="{{ url_for('admin.edit_project') }}" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">Add Project</a>
+    </div>
+    
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <table class="min-w-full leading-normal">
+            <thead>
+                <tr>
+                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Title</th>
+                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Date Created</th>
+                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for project in projects %}
+                <tr>
+                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <p class="text-gray-900 whitespace-no-wrap">{{ project.title }}</p>
+                    </td>
+                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <p class="text-gray-900 whitespace-no-wrap">{{ project.date_created.strftime('%Y-%m-%d') }}</p>
+                    </td>
+                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <a href="{{ url_for('admin.edit_project', item_id=project.id) }}" class="text-indigo-600 hover:text-indigo-900 mr-4">Edit</a>
+                        <a href="{{ url_for('admin.delete_item', item_type='project', item_id=project.id) }}" class="text-red-600 hover:text-red-900" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="3" class="text-center py-10 text-gray-500">No projects found. Add one to get started!</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
+
