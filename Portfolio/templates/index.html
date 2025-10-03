@@ -4,24 +4,19 @@
 
 {% block content %}
 
-<!-- Hero Section -->
-<section id="home" class="min-h-screen flex items-center bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
-    <div class="container mx-auto px-6 py-12 flex flex-col md:flex-row items-center">
-        <!-- Left Column -->
+<section id="home" class="min-h-screen flex items-center bg-slate-50 dark:bg-slate-900 transition-colors duration-300 relative overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-10 dark:opacity-5">
+        <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+            <path d="M20 50 C5 20, 80 5, 95 30 C110 55, 30 95, 20 50 Z" fill="none" stroke="currentColor" stroke-width="0.5" class="text-indigo-400 dark:text-indigo-600 animate-spin-slow"></path>
+            <path d="M25 55 C10 25, 85 10, 100 35 C115 60, 35 100, 25 55 Z" fill="none" stroke="currentColor" stroke-width="0.3" class="text-purple-400 dark:text-purple-600 animate-spin-medium"></path>
+        </svg>
+    </div>
+    <div class="container mx-auto px-6 py-12 flex flex-col md:flex-row items-center relative z-10">
         <div class="md:w-3/5 text-center md:text-left">
-            <!-- ============================================= -->
-            <!-- EDIT THIS: Your Main Title                    -->
-            <!-- ============================================= -->
             <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 dark:text-white leading-tight">
                 From Curiosity To Code
             </h1>
-            <!-- ============================================= -->
-            <!-- EDIT THIS: Your Subtitle                      -->
-            <!-- ============================================= -->
             <p class="mt-4 text-xl text-slate-600 dark:text-slate-400">Learning Today, Building Tomorrow</p>
-            <!-- ============================================= -->
-            <!-- EDIT THIS: Your Description                   -->
-            <!-- ============================================= -->
             <p class="mt-4 max-w-xl text-lg text-slate-500 dark:text-slate-300">
                 Curious about how data shapes the world, and coding my way into it. Eager to learn, ready to contribute, always moving forward.
             </p>
@@ -34,7 +29,6 @@
                 </a>
             </div>
         </div>
-        <!-- Right Column -->
         <div class="md:w-2/5 mt-12 md:mt-0 flex justify-center items-center">
             <div class="relative w-96 md:w-[36rem] aspect-square">
                 <div class="absolute inset-0 bg-slate-200 dark:bg-slate-700 rounded-full"></div>
@@ -44,9 +38,38 @@
     </div>
 </section>
 
-<!-- Skills & Technologies Section -->
-<section id="skills" class="py-24 bg-white dark:bg-slate-800 transition-colors duration-300">
-    <div class="container mx-auto px-6">
+<section id="about" class="py-24 bg-white dark:bg-slate-800 transition-colors duration-300 relative overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-5">
+        <svg class="w-full h-full" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+            <circle cx="20" cy="20" r="5" fill="currentColor" class="text-blue-300 dark:text-blue-700"></circle>
+            <rect x="70" y="30" width="8" height="8" fill="currentColor" class="text-green-300 dark:text-green-700"></rect>
+            <polygon points="120,10 130,30 110,30" fill="currentColor" class="text-red-300 dark:text-red-700"></polygon>
+            <circle cx="180" cy="50" r="6" fill="currentColor" class="text-yellow-300 dark:text-yellow-700"></circle>
+            <path d="M50 100 Q75 125, 100 100 T150 100" fill="none" stroke="currentColor" stroke-width="2" class="text-indigo-200 dark:text-indigo-800"></path>
+            <circle cx="40" cy="150" r="4" fill="currentColor" class="text-orange-300 dark:text-orange-700"></circle>
+            <rect x="100" y="160" width="10" height="10" fill="currentColor" class="text-cyan-300 dark:text-cyan-700"></rect>
+        </svg>
+    </div>
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-slate-900 dark:text-white">About Me</h2>
+            <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                Curious and versatile learning fresher with a unique background in English literature and currently pursuing a B.S. in Data Science & Programming at IIT Madras. Strong foundation in communication, critical thinking, and problem-solving. Excited to apply growing technical skills in programming, data analysis, and technology to real-world challenges. Eager to learn from experienced professionals, contribute to teams, and grow into the role with dedication.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="skills" class="py-24 bg-slate-50 dark:bg-slate-900 transition-colors duration-300 relative overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-10 dark:opacity-5">
+        <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+            <line x1="10" y1="10" x2="90" y2="30" stroke="currentColor" stroke-width="0.8" class="text-gray-300 dark:text-gray-700"></line>
+            <line x1="5" y1="50" x2="95" y2="40" stroke="currentColor" stroke-width="0.5" class="text-indigo-300 dark:text-indigo-700"></line>
+            <line x1="20" y1="90" x2="80" y2="70" stroke="currentColor" stroke-width="0.7" class="text-purple-300 dark:text-purple-700"></line>
+            <path d="M10 80 Q30 70, 50 80 T90 80" fill="none" stroke="currentColor" stroke-width="0.6" class="text-green-300 dark:text-green-700"></path>
+        </svg>
+    </div>
+    <div class="container mx-auto px-6 relative z-10">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-bold text-slate-900 dark:text-white">Skills & Technologies</h2>
             <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">A comprehensive toolkit for building modern web applications and digital experiences.</p>
@@ -71,14 +94,12 @@
 </section>
 
 
-<!-- Featured Projects Section -->
-<section id="projects" class="py-24 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+<section id="projects" class="py-24 bg-white dark:bg-slate-800 transition-colors duration-300">
     <div class="container mx-auto px-6">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-bold text-slate-900 dark:text-white">Featured Projects</h2>
             <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">A showcase of my recent work and personal projects demonstrating various technologies and skills.</p>
         </div>
-        <!-- Note: Filtering functionality would require JavaScript -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {% for project in projects %}
             <div class="bg-white dark:bg-slate-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
@@ -118,8 +139,7 @@
     </div>
 </section>
 
-<!-- Certifications Section -->
-<section id="certifications" class="py-24 bg-white dark:bg-slate-800 transition-colors duration-300">
+<section id="certifications" class="py-24 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
     <div class="container mx-auto px-6">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-bold text-slate-900 dark:text-white">Certifications & Achievements</h2>
@@ -127,7 +147,7 @@
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {% for cert in certifications %}
-            <div class="bg-slate-50 dark:bg-slate-700/50 p-6 rounded-xl border border-slate-200 dark:border-slate-700">
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700">
                 <div class="flex justify-between items-start mb-4">
                     <div class="flex items-center space-x-3">
                         <div class="bg-slate-200 dark:bg-slate-600 p-2 rounded-full">
@@ -144,7 +164,6 @@
                     </a>
                     {% endif %}
                 </div>
-                <!-- You can add a description field to your model for this -->
                 <p class="text-sm text-slate-600 dark:text-slate-400">Demonstrates ability to design and maintain applications on the target platform.</p>
             </div>
             {% else %}
@@ -154,8 +173,7 @@
     </div>
 </section>
 
-<!-- Blog Section -->
-<section id="blog" class="py-24 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+<section id="blog" class="py-24 bg-white dark:bg-slate-800 transition-colors duration-300">
      <div class="container mx-auto px-6">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-bold text-slate-900 dark:text-white">Latest Blog Posts</h2>
@@ -178,20 +196,17 @@
     </div>
 </section>
 
-<!-- Contact Section -->
-<section id="contact" class="py-24 bg-white dark:bg-slate-800 transition-colors duration-300">
+<section id="contact" class="py-24 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
     <div class="container mx-auto px-6">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-bold text-slate-900 dark:text-white">Get In Touch</h2>
             <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Have a project in mind or want to collaborate? I'd love to hear from you.</p>
         </div>
-        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 bg-slate-50 dark:bg-slate-900/50 p-8 rounded-xl">
-            <!-- Left: Contact Info -->
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 bg-white dark:bg-slate-800 p-8 rounded-xl">
             <div>
                 <h3 class="text-2xl font-semibold text-slate-800 dark:text-white">Let's Connect</h3>
                 <p class="mt-2 text-slate-600 dark:text-slate-400">Whether you have a question or just want to say hello, I'm always happy to connect.</p>
                 <div class="mt-8 space-y-4">
-                    <!-- EDIT THIS: Your contact details -->
                     <div class="flex items-center space-x-3">
                         <div class="bg-slate-200 dark:bg-slate-700 p-2 rounded-full"><svg class="w-5 h-5 text-slate-600 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div>
                         <span>shubhashishmohanta97@gmail.com</span>
@@ -206,7 +221,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Right: Form -->
             <div>
                  <form action="{{ url_for('portfolio.contact') }}" method="POST">
                     <div class="mb-4">
@@ -217,8 +231,7 @@
                         <label for="email" class="block sr-only">Email</label>
                         <input type="email" id="email" name="email" required placeholder="your.email@example.com" class="w-full px-4 py-3 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
                     </div>
-                     <!-- I'm adding a subject field as per your design -->
-                    <div class="mb-4">
+                     <div class="mb-4">
                         <label for="subject" class="block sr-only">Subject</label>
                         <input type="text" id="subject" name="subject" required placeholder="What's this about?" class="w-full px-4 py-3 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
                     </div>
@@ -238,4 +251,3 @@
     </div>
 </section>
 {% endblock %}
-
