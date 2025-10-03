@@ -87,4 +87,3 @@ class Visit(db.Model):
 
     def __repr__(self):
         return f'<Visit from {self.ip_address} on {self.timestamp}>'
-
