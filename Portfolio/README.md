@@ -1,4 +1,4 @@
-Portfolio with Admin Panel
+Full-Stack Portfolio with Admin Panel
 This is a complete, deployment-ready portfolio website built with Flask and Tailwind CSS. It features a dynamic public-facing portfolio and a secure admin panel for managing content.
 
 Features
@@ -119,6 +119,5 @@ Procfile: Create a Procfile in the root directory for your hosting provider:
 web: gunicorn app:create_app()
 
 Install Gunicorn: pip install gunicorn and add it to requirements.txt (pip freeze > requirements.txt).
-
 
 Environment Variables: Ensure all variables from your .env file are set in your hosting provider's dashboard. Do not commit the .env file to version control.
