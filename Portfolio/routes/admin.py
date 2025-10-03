@@ -219,4 +219,3 @@ def delete_item(item_type, item_id):
 def view_messages():
     messages = Message.query.order_by(Message.timestamp.desc()).all()
     return render_template('admin/messages.html', messages=messages)
-
